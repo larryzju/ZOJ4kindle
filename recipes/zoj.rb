@@ -38,7 +38,6 @@ class ZOJ < Kindlefodder
       f.puts httpget( 'http://acm.zju.edu.cn/onlinejudge/style/zoj.css' )
     }
 
-    vols = vols[0..1]
     vols.each do |vol|
       xs <<  {
         title:    "Volume #{vol.inner_text[/\d+/]}",
@@ -84,7 +83,7 @@ class ZOJ < Kindlefodder
       end
 
       xs << {
-        title: "%4d. %s" % [ id, title ],
+        title: title,
         path:  path,
         description: '',
         autho: ''
