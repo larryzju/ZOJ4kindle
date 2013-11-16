@@ -2,6 +2,14 @@ ZOJ4kindle
 ==========
 
 Kindlefodder recipe of ZOJ( Zhejiang University Online Judge ) which will
-translating ZOJ[zoj] pages into Kindle ebooks.
+translating [ZOJ] pages into Kindle ebooks.
 
-[zoj]:http://acm.zju.edu.cn
+[ZOJ]:http://acm.zju.edu.cn
+
+## Requirements
+
+* Ruby 1.9 above
+* [Kindlefodder]
+* Kindlegen
+
+[Kindlefodder]:https://github.com/danchoi/kindlefodder
