@@ -99,6 +99,8 @@ class ZOJ < Kindlefodder
     main = doc.css( "table#main td#content" )[0]
     main.search( "img[@src]" ).each {|img|
       img['src'] = @baseurl + URI.unescape(img['src'])
+      ## problem 3377 hack
+      img['src'] = img['src'].sub( /\/$/, '' )
     }
     
     problem_head(title) + main.inner_html + problem_tail
