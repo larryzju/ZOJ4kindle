@@ -1,10 +1,8 @@
 ZOJ4kindle
 ==========
 
-Kindlefodder recipe for [ZOJ] ( Zhejiang University Online Judge ) which will
+Kindlefodder recipe for [ZOJ](http://acm.zju.edu.cn) ( Zhejiang University Online Judge ) which will
 translate problems into Kindle ebooks.
-
-[ZOJ]:http://acm.zju.edu.cn
 
 ## Requirements
 
