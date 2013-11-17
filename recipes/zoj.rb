@@ -5,6 +5,7 @@ class ZOJ < Kindlefodder
 
   def httpget url
     puts "GET #{url}"
+    sleep 3
     `curl -s -L "#{url}"`
   end
 
@@ -33,11 +34,6 @@ class ZOJ < Kindlefodder
     FileUtils::mkdir_p "#{output_dir}/articles"
     xs = []
 
-    @csspath = "#{output_dir}/articles/zoj.css"
-    File.open( @csspath ,'w' ) {|f|
-      f.puts httpget( 'http://acm.zju.edu.cn/onlinejudge/style/zoj.css' )
-    }
-
     vols.each do |vol|
       xs <<  {
         title:    "Volume #{vol.inner_text[/\d+/]}",
@@ -48,13 +44,30 @@ class ZOJ < Kindlefodder
   end
 
   def problem_head title
-    "<html><head><meta http-equiv=Content-Language content=UTF-8 />" +
-    "<title>#{title}</title>"+
-    '<style type="text/css">' +
-    open( @csspath, 'r' ).read + 
-    '</style>' +
-    '</head>'+
-    '<body>'
+'<html>
+  <head>
+    <meta http-equiv=Content-Language content=UTF-8 />
+    <style type="text/css">
+      .bigProblemTitle
+      {
+      font-size: 200%;
+      color:     blue;
+      text-align:center
+      }
+
+      #content_title
+      {
+      background-color: eeeeee;
+      font-size: 120%;
+      font-weight: bold;
+      float: left;
+      clear: left;
+      width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+  '
   end
 
   def problem_tail
